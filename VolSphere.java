@@ -19,27 +19,32 @@ public final class VolSphere {
     private VolSphere() {
         throw new IllegalStateException("Utility Class");
     }
-    public static void main(String[] args) {
-       // Using Scanner for Getting Input from User
-    final Scanner scanner = new Scanner(System.in);
 
-       System.out.println("Enter the radius of your sphere: ");
+    /**
+    * Main.
+    *
+    * @param args unused
+    */
+    public static void main(String[] args) {
+        // Using Scanner for Getting Input from User
+        final Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the radius of your sphere: ");
 
         // Get the radius as a string
         final String radius = scanner.nextLine();
 
-       // Convert the radius to a double
-       final double radiusDouble = Double.parseDouble(radius);
+        // Convert the radius to a double
+        final double radiusDouble = Double.parseDouble(radius);
 
         if (radiusDouble < 0) {
             System.out.println("Radius can not be negative");
         } else {
+            double volume = 0.0;
 
-        final double volume = 4.0 / 3.0 * Math.PI * Math.pow(radiusDouble, 3);
+            volume = 4.0 / 3.0 * Math.PI * Math.pow(radiusDouble, 3);
 
             System.out.print("The volume of the sphere with radius: ");
-            System.out.print(radius + "cm, is ");
-            System.out.format("%.2f .",volume);
+            System.out.print(radius + "cm, is " + volume + " cm^3");
         }
         // Closing Scanner
         scanner.close();
